@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+{% block content %}
+
+<div class="about" style="background-image: url('{% static 'img/haederimg.png' %}');">
+    <div class="ab1-0">
+        <pre><div class="ab1-1"><a href="{% url 'index' %}">HOME</a><h4>  - >  About Us</h4></div></pre>
+        <h1>ABOUT US</h1>
+    </div>
+</div>
+
+
+
+
+<div class="about-1">
+        <div class="ab-1"><h1>Fitness Center</h1></div>
+        <div class="ab-2"><pre>Explore the key features of our gym management software that take your gym business to the next level.
+             Each feature is designed to enhance efficiency and improve member engagement, helping you manage your gym effortlessly</pre></div>
+</div>
+
+
+
+<div class="about-2">
+    <div class="ab-3">
+        <h1><pre>Client & Membership 
+Management</pre></h1>
+            <div><pre><h4>Simplify sign-ups and membership management 
+                with a user-friendly interface.</h4></pre></div>
+            <div><pre><h4>Manage all member details in one dashboard, including 
+                contact information, billing history, and membership plans.</h4></pre></div>
+            <div><pre></pre><h4>Offer flexible membership options and automated renewals to keep members engaged.</h4></pre></div>
+    </div>
+    
+    <div class="ab-5">
+        <div class="ab-5-img" style=" background-image: url('{% static 'img/about.png' %}')">
+            
+        </div>
+    </div>
+
+</div>
+
+    
+
+
+
+
+{% endblock %}

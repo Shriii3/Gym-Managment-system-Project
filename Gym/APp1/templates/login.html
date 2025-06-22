@@ -2,45 +2,18 @@
 {% load static %}
 
 {% block content%}
-
 <form method="POST">
     {% csrf_token %}
-    {% if user.is_authenticated %}
-    <div class="join" style="background-image: url('{% static 'img/join.png' %}');">
-        <div class="join-0"><div class="join-mem">Membership Form</div>
-            <div class="join-1">
-                <div class="join-2">First Name<input type="text" placeholder="First Name" name = "first name"></div>
-                <div class="join-2">Last Name<input type="text" placeholder="Last Name" name = "last name"></div>
-                <pre><div class="join-2">           Age<input type="number" placeholder="Age" name = "age"></div></pre>
-                <div class="join-2">Mobile No<input type="tel" placeholder="Mobile Number" name = "number"></div>
-                <pre><div class="join-2">Height      <input type="number" placeholder="Height" name = "height"></div></pre>
-                <pre><div class="join-2">Weight      <input type="number" placeholder="Weight" name = "weight"></div></pre>
-                <pre><div class="join-2">Address  <textarea placeholder="Address" name = "address" class="textarea1"></textarea></div></pre>
-                <div class="join-4">
-                    <label for="gym1">
-                        <input type="radio" name="gym_category" value="GYM" class="gym" id="gym1"> GYM
-                    </label>
-                    <label for="gym2">
-                        <input type="radio" name="gym_category" value="CARDIO" class="gym" id="gym2"> CARDIO
-                    </label>
-                    <label for="gym3">
-                        <input type="radio" name="gym_category" value="GYM+CARDIO" class="gym" id="gym3"> GYM + CARDIO
-                    </label>
-                    
-                    
-                </div>
-                <div class="join-5"><button class="btn-join">Go For Payment</button></div>
-            </div>
+    
+    <div class="signup">
+        <div class="login-img1"><div class="main1" style="background-image: url('{% static 'img/login.png' %}')"></div></div>
+        <div class="input_panel" >
+            <div class="input-1">Login</div>
+            <div class="input1"><pre>      Email<input type="email" placeholder="Email" name="email"></pre></div>
+            <div class="input1">Password<input type="password" placeholder="Password" name="password"></div>
+            
+            <div class="input2"><input type="submit" placeholder="submit"></div>
         </div>
     </div>
-    {% else%}
-    <div class="error" style="background-image: url('{% static 'img/join.png' %}');">
-        <div class="error-1">
-            <div class="e-2"><h1>Please First Login</h1></div>
-            <div class="e-3"><button><a href="{% url 'Login' %}">Login</a></button></div>
-        </div>
-    </div>
-    {% endif %}
 </form>
-
-{% endblock%}
+{% endblock %}
