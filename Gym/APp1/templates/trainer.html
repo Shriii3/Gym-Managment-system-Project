@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static%}
+
+
+
+
+{% block content %}
+
+<div class="about" style="background-image: url('{% static 'img/haederimg.png' %}');">
+    <div class="ab1-0">
+        <pre><div class="ab1-1"><a href="{% url 'index' %}">HOME</a><h4>  - >  Trainer</h4></div></pre>
+        <h1>TRAINERS</h1>
+    </div>
+</div>
+
+<div class="trainer">
+    <div class="trainer-1">
+        <div class="trainer-2" style="background-image: url('{% static 'img/train1.png' %}');"></div>
+        <div class="trainer-3">
+            <h2>Name : Alexander</h2>
+            <h4>Certified Trainer</h4>
+            <h4>6 years Experience</h4>
+        </div>
+    </div>
+    <div class="trainer-1">
+        <div class="trainer-2" style="background-image: url('{% static 'img/train2.png' %}');"></div>
+        <div class="trainer-3"><h2>Name : Ricklton</h2>
+            <h4>Certified Trainer</h4>
+            <h4>8 years Experience</h4>
+        </div>
+    </div>
+    <div class="trainer-1">
+        <div class="trainer-2" style="background-image: url('{% static 'img/train3.png' %}');"></div>
+        <div class="trainer-3">
+            <h2>Name : Princess</h2>
+            <h4>Certified Trainer</h4>
+            <h4>5 years Experience</h4>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br>
+
+
+
+
+{% endblock%}

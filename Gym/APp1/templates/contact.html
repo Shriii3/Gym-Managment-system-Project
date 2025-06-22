@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="about" style="background-image: url('{% static 'img/haederimg.png' %}');">
+    <div class="ab1-0">
+        <pre><div class="ab1-1"><a href="{% url 'index' %}">HOME</a><h4>  - >  Contact</h4></div></pre>
+        <h1>CONTACT US </h1>
+    </div>
+</div>
+
+
+<div class="contact">
+    <div class="head-contact">
+        <div><h4>Your connection answered.Contact us now!</h4></div>
+        <div><h1>Connect Instantly</h1></div>
+    </div>
+
+    <div class="main-contact">
+        <div class="contact-box1">
+            <div class="box1-fit">
+                    <h1>Your Digital Fitness Partner</h1>
+                    <h4 ><pre>Choose the leading studio management software 
+        to MANAGE, STREAMLINE & SUCCEED.</pre></h4>
+
+                    <h4>Take the first step towards maximizing your operations!!</h4>
+                        
+            <h6 ><pre>Begin with a FREE DEMO to explore how our 
+        software fits your needs.</pre></h6>
+                        
+                    <h6><pre>Once satisfied, seamlessly transition into a subscription to 
+             unlock its full potential for your fitness studio's success.</pre></h6>
+                </div>
+        </div>
+        <div class="contact-box2">
+            <div class="cbox">
+                <div class="cbox1">
+                    <h1><pre>Book Your Personlised 
+    Demo Today!</pre></h1>
+                    <div class="contact-button">
+                        
+                        <a href="{% url 'join' %}"><button class="btn-1">Join Us</button></a>
+                        
+                        <a href="{% url 'demo' %}"><button class="btn-2">Click for Request free demo</button></a>
+                    </div>
+                </div>
+                <div class="cbox2">
+                    <div class="contact-call"><pre>Contact Us
+            +91 8928184098
+                    </pre></div>
+                    <div class="contact-email"><pre>Email Us
+            fitnesscenter@gmail.com
+                    </pre></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

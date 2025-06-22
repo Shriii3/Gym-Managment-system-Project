@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="about" style="background-image: url('{% static 'img/haederimg.png' %}');">
+  <div class="ab1-0">
+      <pre><div class="ab1-1"><a href="{% url 'index' %}">HOME</a><h4>  - >  Payment</h4></div></pre>
+      <h1>EASY PAYMENT MODE</h1>
+  </div>
+</div>
+<div class="pay0" style="background-image: url('{% static 'img/pay.png' %}');">
+    <div class="pay1">You want to choose plan on your basis</div>
+    <form method="POST">
+      {% csrf_token %}
+        <div class="pay2">
+            {% for i in categories%}
+            <div class="pay5" style="background-image: url('{% static 'img/pay1.png' %}');">
+              <label for="one_month_{{ forloop.counter }}">
+                <input type="radio" id="one_month_{{ forloop.counter }}" name="gym_pay" value="{{ i.Price_one_month }}" class="py1"> 1 month
+              </label>
+                          </div>
+                
+            <div class="pay3" >
+                <div class="pay4">Fit Name : {{i.Name}}</div>
+                    <div class="pay4">Price : Rs.{{i.Price_one_month}}</div>
+            </div>
+        </div>
+       
+
+        
+        <div class="pay2">
+            <div class="pay5" style="background-image: url('{% static 'img/pay1.png' %}');">
+              <label for="three_month_{{ forloop.counter }}">
+                <input type="radio" id="three_month_{{ forloop.counter }}" name="gym_pay" value="{{ i.Price_three_month }}" class="py1"> 3 month
+              </label>
+                          </div>
+                
+                <div class="pay3">
+                    <div class="pay4">Fit Name : {{i.Name}}</div>
+                    <div class="pay4">Price : Rs.{{i.Price_three_month}}</div>
+                </div>
+        </div>
+        <div class="pay2">
+            <div class="pay5" style="background-image: url('{% static 'img/pay1.png' %}');">
+              <label for="six_month_{{ forloop.counter }}">
+                <input type="radio" id="six_month_{{ forloop.counter }}" name="gym_pay" value="{{ i.Price_six_month }}" class="py1"> 6 month
+              </label>
+                          </div>
+                
+                <div class="pay3">
+                    <div class="pay4">Fit Name : {{i.Name}}</div>
+                    <div class="pay4">Price : Rs.{{i.Price_six_month}}</div>
+                </div>
+        </div>
+        <div class="pay2">
+            <div class="pay5" style="background-image: url('{% static 'img/pay1.png' %}');">
+              <label for="yearly_{{ forloop.counter }}">
+                <input type="radio" id="yearly_{{ forloop.counter }}" name="gym_pay" value="{{ i.Price_yearly }}" class="py1"> Yearly 
+              </label>
+                          </div>
+                
+                <div class="pay3">
+                    <div class="pay4">Fit Name : {{i.Name}}</div>
+                    <div class="pay4">Price : Rs.{{i.Price_yearly}}</div>
+                </div>
+        </div>
+            {% endfor %}
+          <div class="pay6"><button type="submit" id="rzp-button1" > Pay </button></div>
+          <input type="hidden" name="gym_name" value="{{ i.Name }}">
+
+    </form> 
+</div>
+
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+  document.getElementById("rzp-button1").onclick = function (e) {
+    e.preventDefault();
+  
+    const selected = document.querySelector('input[name="gym_pay"]:checked');
+    if (!selected) {
+      alert("Please select a plan before proceeding.");
+      return;
+    }
+  
+    const packageValue = selected.value;
+  
+    fetch("", {
+      method: "POST",
+      headers: {
+        "X-CSRFToken": "{{ csrf_token }}",
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        gym_pay: packageValue,
+      }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.error) {
+        alert(data.error);
+        return;
+      }
+  
+      const options = {
+        key: data.api_key,
+        amount: data.amount,
+        currency: "INR",
+        name: "Your Gym Name",
+        description: "Membership Purchase",
+        order_id: data.order_id,
+        handler: function (response) {
+          alert("Payment successful!");
+          console.log(response);
+        },
+        theme: {
+          color: "#3399cc",
+        },
+      };
+  
+      const rzp1 = new Razorpay(options);
+      rzp1.open();
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      alert("Something went wrong!");
+    });
+  };
+  </script>
+  
+
+
+{% endblock %}

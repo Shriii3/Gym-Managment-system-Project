@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    
+
+    <section>
+
+        
+
+        <div class="section-1">
+
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1800">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="{% static 'img/main2.png' %}" class="d-block w-100" alt="..." height="900">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{% static 'img/main.png' %}" class="d-block w-100" alt="..."height="900">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{% static 'img/main3.png' %}" class="d-block w-100" alt="..."height="900">
+                  </div>
+                </div>
+              </div>
+
+
+            
+            <!-- <div class="joinsection" >Start Your Fitness Journey Today! <a href="{% url 'join' %}">Join Us</a></div> -->
+        </div>
+        <div class="section-2">
+            
+            
+        <div class="box">
+            <h1 class="box-name">Offer section</h1>
+            <div style="background-image: url('static/img/Offer.png');" class="box-image"></div>
+            <h2 class="box-more"><a href="{% url 'offer' %}">See More</a></h2>
+        </div>
+        <div class="box">
+            <h1 class="box-name">Price section</h1>
+            <div style="background-image: url('static/img/price.png');" class="box-image"></div>
+            <h2 class="box-more"><a href="{% url 'price' %}">See More</a></h2>
+        </div>
+        <div class="box">
+            <h1 class="box-name">Trainer</h1>
+            <div style="background-image: url('static/img/pstraine.png');" class="box-image"></div>
+            <h2 class="box-more"><a href="{% url 'trainer' %}">See More</a></h2>
+        </div>
+
+        </div>
+        
+
+    <div class="section-3">
+        <div class="box1" style="background-image: url('static/img/bodybuilding.jpg');">
+            <div class="main">
+                <h1  class="main-name">BODY BUILDING</h1>
+
+                
+            </div>
+        </div>
+        <div class="box1" style="background-image: url('static/img/fitness.jpg');">
+            <div class="main">
+                <h1  class="main-name">FITNESS</h1>
+
+                
+            </div>
+        </div>
+    </div>
+    <div class="section-4">
+
+        <div class="box1" style="background-image: url('static/img/cardio.jpg');">
+            <div class="main">
+                <h1  class="main-name">CARDIO</h1>
+               
+                
+            </div>
+        </div>
+        <div class="box1" style="background-image: url('static/img/crossfit.jpg');">
+            <div class="main">
+                <h1  class="main-name">CROSSFIT</h1>
+                
+                
+            </div>
+        </div>
+    </div>
+
+
+    </section>
+    
+    
+        
+    <section>
+        <div class="footer2">
+            <div class="hero-section">
+                <div class="foologo" style="background-image: url('static/img/gymlogo.png');"></div>
+                <div class="foo-name"><pre>Fitness Center Pvt Ltd is for build and fitness body.</pre></div>
+
+            
+                <div class="footer3">
+                    <i class="bi bi-geo-alt-fill"></i><pre>     Deslepada,Nandivali,Dombivali(east)</pre>
+                </div>
+                <div class="footer3">
+                    <i class="bi bi-telephone-fill"></i><pre>     6541216900</pre>
+                </div>
+                <div class="footer3">
+                    <i class="bi bi-envelope-fill"></i><pre>     hello@example.com</pre>
+                </div>
+            </div>
+        
+            <div class="footer-4">
+                <ul>
+                    <p>Using US</p>
+                    <a href="{% url 'about' %}">About us</a>
+                    <a href="{% url 'join' %}">Join Us</a>
+                    <a href="{% url 'contact' %}">Contact</a>
+                </ul>
+            </div>
+            <div class="footer-4">
+                <ul>
+                    <p>Follow the Account</p>
+                    <a href="#!">Instagram</a>
+                    <a href="#!">Facebook</a>
+                    <a href="#!">whatsapp</a>
+                </ul>
+            </div>
+        <div>
+    </section>
+  
+     
+    
+
+{% endblock %}

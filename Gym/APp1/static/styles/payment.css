@@ -1,0 +1,74 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.pay0{
+    height: 1300px;
+    background-size: cover;
+    display: block;
+}
+
+.pay1{
+    height: 70px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    
+}
+
+
+.pay2{
+    height: 200px;
+    width: 50%;
+    border: 1px solid black;
+    display: flex;
+    
+    margin-top: 50px;
+    margin-left: 350px;
+    
+}
+
+.pay2 input{
+    margin-left: 80px;
+    margin-top: 80px;
+    
+}
+
+.py1{
+    size: 3rem;
+}
+
+.pay5{
+    width: 50%;
+    
+    background-size: cover;
+}
+
+.pay3{
+    display: block;
+    padding-top: 50px;
+    width: 600px;
+    background-color: beige
+    
+}
+
+.pay4{
+    margin-left: 50px;
+    padding-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.pay6 button{
+    margin-top: 20px;
+    margin-left: 600px;
+    height: 30px;
+    width: 100px;
+}

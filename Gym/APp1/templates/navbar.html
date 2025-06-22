@@ -1,0 +1,29 @@
+{% load static %}
+<navbar>
+    <div class="navbar">
+        <div class="gym-logo">
+            <a href="{% url 'index' %}"><div class="logo" style =" background-image: url('{% static 'img/gymlogo.png' %}');"></div></a>
+        </div>
+        {% if user.is_authenticated %}
+        <div class="group"><a href="{% url 'logout' %}">Logout</a></div>
+        {% else %}
+        <div class="group"><a href="{% url 'SignUp' %}">Register</a></div>
+        <div class="group"><a href="{% url 'Login' %}">Login</a></div>
+        {% endif %}
+        <div class="group"><a href="{% url 'trainer' %}">Trainer</a></div>
+        <div class="group"><a href="{% url 'about' %}">About Us</a></div>
+        <div class="group"><a href="{% url 'contact' %}">Contact</a></div>
+        <div class="group"><a href="{% url 'join' %}">Join Us</a></div>
+
+        <div class="search-panel search">
+            <input placeholder="Search here" class="search-name">
+            <div class="search-icon">
+                <i class="bi bi-search"></i>
+            </div>
+        </div>
+          
+
+
+    </div>
+
+</navbar>

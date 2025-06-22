@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+    
+    <div class="signup" > 
+        <div class="sign-img">
+            <div class="main" style="background-image: url('{% static 'img/signup.png' %}')"></div>
+        </div>
+        <div class="input_panel" >
+                <div class="input-1">Sign Up</div>
+                <div class="input1">First Name<input type="text" placeholder="First Name" name="first_name"></div>
+                <div class="input1">Last Name<input type="text" placeholder="Last Name" name="last_name"></div>
+                <div class="input1"><pre>Email        <input type="email" placeholder="Email" name="email"></pre></div>
+                <div class="input1"><pre>Password <input type="password" placeholder="Password" name="password"> </pre></div>
+                <div class="input2" ><input type="submit" placeholder="submit"></div>
+        </div>
+    </div>
+            
+    <!-- <div class="logo2" style =" background-image: url('static/img/signup.png');"></div> -->
+    
+</form>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content%}
+{% if user.is_authenticated %}
+
+
+<div class="about" style="background-image: url('{% static 'img/haederimg.png' %}');">
+    <div class="ab1-0">
+        <pre><div class="ab1-1"><a href="{% url 'index' %}">HOME</a><h4>  - >  REVIEW</h4></div></pre>
+        <h1>REVIEW</h1>
+    </div>
+</div>
+
+<div class="review" style="background-image: url('{% static 'img/join.png' %}');">
+    {% for i in forms %}
+    <div class="review-0">
+        <div class="review-1">
+            <div class="review-1-0">Form Review</div>
+            
+            <h4>First Name : {{i.First_Name}}</h4>
+            <h4>Last Name :{{i.Last_Name}}</h4>
+            <h4>Age : {{i.Age}}</h4>
+            <h4>Mobile No : {{i.Mobile_No}}</h4>
+            <h4>Height : {{i.Height}}</h4>
+            <h4>Weight : {{i.Weight}}</h4>
+            <h4>Address : {{i.Address}}</h4>
+            <h4>FIt : {{i.category}}</h4>
+            <a href="{% url 'payment' i.category  %}"><button>Payment</button></a>
+            
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else%}
+<div class="error" style="background-image: url('{% static 'img/join.png' %}');">
+    <div class="error-1">
+        <div class="e-2"><h1>Please First Login</h1></div>
+        <div class="e-3"><button><a href="{% url 'Login' %}">Login</a></button></div>
+    </div>
+</div>
+{% endif %}
+<br>
+{% endblock %}

@@ -1,0 +1,45 @@
+/* review */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.review{
+    height: 1000px;
+}
+
+.review-0{
+    
+    padding-top: 60px;
+}
+.review-1-0{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    padding-left: 130px;
+    color: grey;
+}
+
+.review-1{
+    height: 600px;
+    width: 900px;
+   padding-top: 35px;
+   padding-left: 80px;
+   display: block;
+   text-align: start;
+   margin-left: 500px; 
+   background-color: white;
+   border-radius: 25px;
+}
+.review-1 h4{
+    padding-top: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.1rem;
+}
+
+.review-1-0 button{
+    padding-left: 60px;
+}
+
+
+

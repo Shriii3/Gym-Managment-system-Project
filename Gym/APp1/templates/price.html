@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{%load static%}
+
+
+{% block content %}
+<div class="price">
+    <div class="price-box">
+        <div class="price-box0">Membership Price</div>
+        <div class="price-box1">
+            <pre><div class="price-box1-1" >Fitness
+        Center</div></pre>
+            <div class="price-box1-2" style="background-image: url('{% static 'img/pr1.png' %}');"> </div>
+        </div>
+        
+        <div class="price-box2">
+            <div class="price-box3">
+                <h1>Only GYM</h1>
+                <h3>Yearly Package :Rs.6000</h3>
+                <h4>1 month = Rs.800</h4>
+                <h4>3 month = Rs.1800</h4>
+                <h4>6 month = Rs.3500</h4>
+            </div>
+            <div class="price-box3">
+                <h1>Only CARDIO</h1>
+                <h3>Yearly Package :Rs.7000</h3>
+                <h4>1 month = Rs.900</h4>
+                <h4>3 month = Rs.2000</h4>
+                <h4>6 month = Rs.3800</h4>
+            </div>
+            <div class="price-box3">
+                <h1>GYM+CARDIO</h1>
+                <h3>Yearly Package :Rs.8000</h3>
+                <h4>1 month = Rs.1000</h4>
+                <h4>3 month = Rs.2500</h4>
+                <h4>6 month = Rs.4500</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
